@@ -1,0 +1,21 @@
+<button class="btn btn-primary" [disabled] = "!showButton" (click)="onCreateServer('server Create')">Add Status</button>
+<input type="text" class="form-control" name=""  id="" (input)="onSetServer($event)">
+<!-- <input type="text" class="form-control" name="" id="" [(ngModel)]="serverName"> -->
+
+<p>{{serverName}}</p>
+<p>{{serverStatus}}</p>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <input class="form-control" type="text" [(ngModel)]="inputValue">
+            <p *ngIf="show else nothing">{{inputValue}}</p>
+            <ng-template #nothing>
+                <p>No Text Added</p>
+            </ng-template>
+            <button class="btn btn-primary" [disabled]="inputValue == '' " (click)="inputValue=''">Reset Status</button>
+            <button class="btn btn-primary" [disabled]="inputValue == '' " (click)="showStatue()">show Status</button>
+            
+        </div>
+    </div>
+</div>
